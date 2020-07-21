@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import PokemonGrid from './PokemonGrid';
+import Page from './Page';
 
-const App = () => <PokemonGrid/> ;
+const App = () => <Page/> ;
 
 export default App;
