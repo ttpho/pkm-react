@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-import {StyledImage} from '../Image/style';
+
+export const StyledImage = styled.img``;
+
+
+export const StyledPokemonGrid = styled.div`
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+`;
 
 export const StyledPokemonItem = styled.div`
     float: left;
@@ -13,6 +21,3 @@ export const StyledPokemonItem = styled.div`
 `;
 
 export const StyledNamePokemonItem = styled.p``;
-
-
-

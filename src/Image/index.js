@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyledImage } from './style';
+import { StyledImage } from '../style';
 
 function Image(props) {
   const [isFailed, setFailed] = useState(false)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledPokemonGrid } from './style';
+import { StyledPokemonGrid } from '../style';
 import PokemonItem from '../PokemonItem';
 
 
