@@ -8,7 +8,7 @@ function PokemonGrid(props) {
         {
             props
                 .results
-                .map((item) => { return <PokemonItem pokemon={item} /> })
+                .map((item) => { return <PokemonItem key={item.national_number} pokemon={item} /> })
         }
     </StyledPokemonGrid>
 }
