@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PokemonGrid from '../PokemonGrid';
+import { getPokemonsAsync } from './api.js';
 
 function Page() {
     const [results, setResults] = useState([])
     const [isLoading, setLoading] = useState(false)
-
-    const getPokemonsAsync = async () => {
-        const url = "https://raw.githubusercontent.com/ttpho/Pokemon-Pocket/master/datas/pokemons.json"
-        let response = await fetch(url);
-        let json = await response.json();
-        return json.results.reduce((unique, o) => {
-            if (!unique.some(obj => obj.name === o.name)) {
-                unique.push(o);
-            }
-            return unique;
-        }, []);
-    };
 
     useEffect(() => {
         setLoading(true)
