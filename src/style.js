@@ -12,12 +12,14 @@ export const StyledPokemonGrid = styled.div`
 export const StyledPokemonItem = styled.div`
     float: left;
     min-height: 137px;
-    width: 80px;
+    width: 100px;
 
     ${StyledImage}{
-        width: 100%;
+        width: 80px;
         height: 80px;
     }
 `;
 
-export const StyledNamePokemonItem = styled.p``;
+export const StyledNamePokemonItem = styled.p`
+    text-align: center;
+`;

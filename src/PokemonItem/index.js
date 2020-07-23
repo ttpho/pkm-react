@@ -10,9 +10,9 @@ function PokemonItem(props) {
   }
 
   const pokemon = props.pokemon
-  const imageUrl = "https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/nationalNumber.png";
+  const imageUrl = "https://raw.githubusercontent.com/ttpho/pkm-react/master/pokemon_json.json/images/nationalNumber.png";
   const imageUrlNew = imageUrl.replace("nationalNumber", pokemon.national_number);
-  const thumb = pokemon.sprites.animated || pokemon.sprites.normal | imageUrlNew
+  const thumb = imageUrl //pokemon.sprites.animated || pokemon.sprites.normal | imageUrlNew
 
   return (
     <StyledPokemonItem onClick={onPokemonItemClicked}>
