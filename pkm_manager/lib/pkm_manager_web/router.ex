@@ -2,21 +2,22 @@ defmodule PkmManagerWeb.Router do
   use PkmManagerWeb, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
-    plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug(:accepts, ["html"])
+    plug(:fetch_session)
+    plug(:fetch_flash)
+    plug(:protect_from_forgery)
+    plug(:put_secure_browser_headers)
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/", PkmManagerWeb do
-    pipe_through :browser
+    pipe_through(:browser)
 
-    get "/", PageController, :index
+    get("/", PageController, :index)
+    resources("/pokemons", PokemonController)
   end
 
   # Other scopes may use custom stacks.
@@ -35,8 +36,8 @@ defmodule PkmManagerWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: PkmManagerWeb.Telemetry
+      pipe_through(:browser)
+      live_dashboard("/dashboard", metrics: PkmManagerWeb.Telemetry)
     end
   end
 end

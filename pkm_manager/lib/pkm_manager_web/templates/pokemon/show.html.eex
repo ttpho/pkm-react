@@ -1,0 +1,28 @@
+<h1>Show Pokemon</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pokemon.name %>
+  </li>
+
+  <li>
+    <strong>National number:</strong>
+    <%= @pokemon.national_number %>
+  </li>
+
+  <li>
+    <strong>Urls:</strong>
+    <%= @pokemon.urls %>
+  </li>
+
+  <li>
+    <strong>Gen:</strong>
+    <%= @pokemon.gen %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.pokemon_path(@conn, :edit, @pokemon) %></span>
+<span><%= link "Back", to: Routes.pokemon_path(@conn, :index) %></span>
