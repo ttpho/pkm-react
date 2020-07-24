@@ -19,7 +19,7 @@
 
   <li>
     <strong>Url image:</strong>
-    <%= @pokemon.url_image %>
+    <img src= "<%= @pokemon.url_image %>" />
   </li>
 
   <li>

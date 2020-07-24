@@ -10,6 +10,5 @@ defmodule PkmManager.Repo.Migrations.CreatePokemons do
 
       timestamps()
     end
-
   end
 end

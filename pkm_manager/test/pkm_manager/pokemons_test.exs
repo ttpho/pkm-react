@@ -6,8 +6,18 @@ defmodule PkmManager.PokemonsTest do
   describe "pokemons" do
     alias PkmManager.Pokemons.Pokemon
 
-    @valid_attrs %{gen: "some gen", name: "some name", national_number: "some national_number", urls: "some urls"}
-    @update_attrs %{gen: "some updated gen", name: "some updated name", national_number: "some updated national_number", urls: "some updated urls"}
+    @valid_attrs %{
+      gen: "some gen",
+      name: "some name",
+      national_number: "some national_number",
+      urls: "some urls"
+    }
+    @update_attrs %{
+      gen: "some updated gen",
+      name: "some updated name",
+      national_number: "some updated national_number",
+      urls: "some updated urls"
+    }
     @invalid_attrs %{gen: nil, name: nil, national_number: nil, urls: nil}
 
     def pokemon_fixture(attrs \\ %{}) do
@@ -71,8 +81,20 @@ defmodule PkmManager.PokemonsTest do
   describe "pokemons" do
     alias PkmManager.Pokemons.Pokemon
 
-    @valid_attrs %{gen: "some gen", name: "some name", national_number: "some national_number", url_image: "some url_image", url_link: "some url_link"}
-    @update_attrs %{gen: "some updated gen", name: "some updated name", national_number: "some updated national_number", url_image: "some updated url_image", url_link: "some updated url_link"}
+    @valid_attrs %{
+      gen: "some gen",
+      name: "some name",
+      national_number: "some national_number",
+      url_image: "some url_image",
+      url_link: "some url_link"
+    }
+    @update_attrs %{
+      gen: "some updated gen",
+      name: "some updated name",
+      national_number: "some updated national_number",
+      url_image: "some updated url_image",
+      url_link: "some updated url_link"
+    }
     @invalid_attrs %{gen: nil, name: nil, national_number: nil, url_image: nil, url_link: nil}
 
     def pokemon_fixture(attrs \\ %{}) do

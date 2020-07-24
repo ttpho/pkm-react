@@ -3,8 +3,20 @@ defmodule PkmManagerWeb.PokemonControllerTest do
 
   alias PkmManager.Pokemons
 
-  @create_attrs %{gen: "some gen", name: "some name", national_number: "some national_number", url_image: "some url_image", url_link: "some url_link"}
-  @update_attrs %{gen: "some updated gen", name: "some updated name", national_number: "some updated national_number", url_image: "some updated url_image", url_link: "some updated url_link"}
+  @create_attrs %{
+    gen: "some gen",
+    name: "some name",
+    national_number: "some national_number",
+    url_image: "some url_image",
+    url_link: "some url_link"
+  }
+  @update_attrs %{
+    gen: "some updated gen",
+    name: "some updated name",
+    national_number: "some updated national_number",
+    url_image: "some updated url_image",
+    url_link: "some updated url_link"
+  }
   @invalid_attrs %{gen: nil, name: nil, national_number: nil, url_image: nil, url_link: nil}
 
   def fixture(:pokemon) do
@@ -75,6 +87,7 @@ defmodule PkmManagerWeb.PokemonControllerTest do
     test "deletes chosen pokemon", %{conn: conn, pokemon: pokemon} do
       conn = delete(conn, Routes.pokemon_path(conn, :delete, pokemon))
       assert redirected_to(conn) == Routes.pokemon_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.pokemon_path(conn, :show, pokemon))
       end

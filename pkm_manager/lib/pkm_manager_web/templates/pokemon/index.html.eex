@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>National number</th>
-      <th>Url link</th>
+      <!-- <th>Url link</th> -->
       <th>Url image</th>
       <th>Gen</th>
 
@@ -17,8 +17,8 @@
     <tr>
       <td><%= pokemon.name %></td>
       <td><%= pokemon.national_number %></td>
-      <td><%= pokemon.url_link %></td>
-      <td><%= pokemon.url_image %></td>
+      <!-- <td><%= pokemon.url_link %></td>  -->
+      <td><img src="<%= pokemon.url_image %>" /></td>
       <td><%= pokemon.gen %></td>
 
       <td>

@@ -5,13 +5,15 @@
 defmodule EslSpider do
   use Crawly.Spider
 
-  alias Crawly.Utils
-
   @impl Crawly.Spider
   def base_url(), do: "https://bulbapedia.bulbagarden.net/"
 
   @impl Crawly.Spider
-  def init(), do: [start_urls: ["https://bulbapedia.bulbagarden.net/wiki/Grookey_(Pok%C3%A9mon)"]]
+  # https://bulbapedia.bulbagarden.net/wiki/Grookey_(Pok%C3%A9mon)
+  # https://bulbapedia.bulbagarden.net/wiki/Snom_(Pok%C3%A9mon)
+  # https://bulbapedia.bulbagarden.net/wiki/Sizzlipede_(Pok%C3%A9mon)
+
+  def init(), do: [start_urls: ["https://bulbapedia.bulbagarden.net/wiki/Snom_(Pok%C3%A9mon)"]]
 
   @impl Crawly.Spider
   def parse_item(response) do
@@ -80,9 +82,13 @@ defmodule EslSpider do
       |> hd()
       |> elem(2)
 
+    national_number_string = String.replace(to_string(number), "#", "")
+    national_number_int = String.to_integer(national_number_string)
+
+
     item = %{
-      name: name,
-      national_number: String.replace(to_string(number), "#", ""),
+      name: to_string(name),
+      national_number: national_number_string,
       url_link: response.request_url,
       url_image: "https:#{url}",
       gen: "VIII"
@@ -93,6 +99,11 @@ defmodule EslSpider do
       |> Enum.uniq()
       |> Enum.map(&build_absolute_url/1)
       |> Enum.map(&Crawly.Utils.request_from_url/1)
+
+    case PkmManager.Pokemons.create_pokemon(item) do
+      {:ok, _} -> IO.inspect("Inserted with success")
+      {:error, changeset} -> IO.inspect("Something went wrong #{changeset}")
+    end
 
     %Crawly.ParsedItem{:items => [item], :requests => requests}
   end
