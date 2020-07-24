@@ -21,7 +21,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Gen
 
-➜ pkm_manager git:(master) mix phx.gen.html Pokemons Pokemon pokemons name:string national_number:string urls:string gen:string
+➜ pkm_manager git:(master) mix phx.gen.html Pokemons Pokemon pokemons name:string national_number:string url_link:string url_image:string gen:string
 
 - creating lib/pkm_manager_web/controllers/pokemon_controller.ex
 - creating lib/pkm_manager_web/templates/pokemon/edit.html.eex

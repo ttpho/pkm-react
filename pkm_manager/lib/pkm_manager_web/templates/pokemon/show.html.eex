@@ -13,8 +13,13 @@
   </li>
 
   <li>
-    <strong>Urls:</strong>
-    <%= @pokemon.urls %>
+    <strong>Url link:</strong>
+    <%= @pokemon.url_link %>
+  </li>
+
+  <li>
+    <strong>Url image:</strong>
+    <%= @pokemon.url_image %>
   </li>
 
   <li>

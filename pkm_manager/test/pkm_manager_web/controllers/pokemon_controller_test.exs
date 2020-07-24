@@ -3,9 +3,9 @@ defmodule PkmManagerWeb.PokemonControllerTest do
 
   alias PkmManager.Pokemons
 
-  @create_attrs %{gen: "some gen", name: "some name", national_number: "some national_number", urls: "some urls"}
-  @update_attrs %{gen: "some updated gen", name: "some updated name", national_number: "some updated national_number", urls: "some updated urls"}
-  @invalid_attrs %{gen: nil, name: nil, national_number: nil, urls: nil}
+  @create_attrs %{gen: "some gen", name: "some name", national_number: "some national_number", url_image: "some url_image", url_link: "some url_link"}
+  @update_attrs %{gen: "some updated gen", name: "some updated name", national_number: "some updated national_number", url_image: "some updated url_image", url_link: "some updated url_link"}
+  @invalid_attrs %{gen: nil, name: nil, national_number: nil, url_image: nil, url_link: nil}
 
   def fixture(:pokemon) do
     {:ok, pokemon} = Pokemons.create_pokemon(@create_attrs)

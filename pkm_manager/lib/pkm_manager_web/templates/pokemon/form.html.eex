@@ -13,9 +13,13 @@
   <%= text_input f, :national_number %>
   <%= error_tag f, :national_number %>
 
-  <%= label f, :urls %>
-  <%= text_input f, :urls %>
-  <%= error_tag f, :urls %>
+  <%= label f, :url_link %>
+  <%= text_input f, :url_link %>
+  <%= error_tag f, :url_link %>
+
+  <%= label f, :url_image %>
+  <%= text_input f, :url_image %>
+  <%= error_tag f, :url_image %>
 
   <%= label f, :gen %>
   <%= text_input f, :gen %>
