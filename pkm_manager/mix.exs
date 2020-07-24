@@ -46,7 +46,7 @@ defmodule PkmManager.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:crawly, "~> 0.10.0"},
-      {:floki, "~> 0.26.0"}
+      {:floki, "~> 0.27.0"}
     ]
   end
 
