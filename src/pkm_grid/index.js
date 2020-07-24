@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledPokemonGrid } from '../style';
-import PokemonItem from '../PokemonItem';
+import PokemonItem from '../pkm_item';
 
 
 function PokemonGrid(props) {

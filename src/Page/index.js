@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PokemonGrid from "../PokemonGrid";
+import PokemonGrid from "../pkm_grid";
 import { getPokemonsAsync, wait } from "./api.js";
 import { StyledPagePokemon, StyledLoader } from "../style";
 import Loader from "react-loader-spinner";

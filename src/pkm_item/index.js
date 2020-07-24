@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../Image';
+import Image from '../pkm_image';
 import { StyledPokemonItem, StyledNamePokemonItem } from '../style';
 
 function PokemonItem(props) {
