@@ -31,4 +31,16 @@ defmodule PkmManager.Application do
     PkmManagerWeb.Endpoint.config_change(changed, removed)
     :ok
   end
+
+  def load_all_and_save() do
+    PkmManager.Pokemons.list_pokemons() |> Enum.each(fn item ->
+      name = "#{item.national_number}.png"
+      url = item.url_image
+      with {:ok, response}  <- Tesla.get(url),
+      {:ok, file} = File.open(name, [:write]) do
+        IO.binwrite(file, response.body)
+        File.close(file)
+      end
+    end)
+  end
 end
