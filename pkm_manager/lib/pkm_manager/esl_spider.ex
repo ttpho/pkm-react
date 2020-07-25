@@ -83,8 +83,6 @@ defmodule EslSpider do
       |> elem(2)
 
     national_number_string = String.replace(to_string(number), "#", "")
-    national_number_int = String.to_integer(national_number_string)
-
 
     item = %{
       name: to_string(name),
