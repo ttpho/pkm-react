@@ -1,15 +1,15 @@
-<h1>Listing Pokemons</h1>
 
+<span><%= link "New Pokemon", to: Routes.pokemon_path(@conn, :new) %></span>
+
+<h1>Listing Pokemons</h1>
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>National number</th>
-      <!-- <th>Url link</th> -->
-      <th>Url image</th>
+      <th>Number</th>
+      <th>Image</th>
       <th>Gen</th>
-
-      <th></th>
+      <th>More...</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +17,6 @@
     <tr>
       <td><%= pokemon.name %></td>
       <td><%= pokemon.national_number %></td>
-      <!-- <td><%= pokemon.url_link %></td>  -->
       <td><img src="<%= pokemon.url_image %>" /></td>
       <td><%= pokemon.gen %></td>
 
@@ -30,5 +29,3 @@
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Pokemon", to: Routes.pokemon_path(@conn, :new) %></span>
