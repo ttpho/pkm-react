@@ -13,7 +13,7 @@ defmodule EslSpider do
   # https://bulbapedia.bulbagarden.net/wiki/Snom_(Pok%C3%A9mon)
   # https://bulbapedia.bulbagarden.net/wiki/Sizzlipede_(Pok%C3%A9mon)
 
-  def init(), do: [start_urls: ["https://bulbapedia.bulbagarden.net/wiki/Snom_(Pok%C3%A9mon)"]]
+  def init(), do: [start_urls: ["https://bulbapedia.bulbagarden.net/wiki/Bulbasaur_(Pok%C3%A9mon)"]]
 
   @impl Crawly.Spider
   def parse_item(response) do

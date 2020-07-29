@@ -8,6 +8,16 @@
 use Mix.Config
 
 config :crawly,
+  closespider_timeout: 10,
+  concurrent_requests_per_domain: 16,
+  follow_redirects: true,
+  item: [:name, :national_number, :url_link, :url_image, :gen],
+  item_id: :national_number,
+  middlewares: [
+    Crawly.Middlewares.DomainFilter,
+    Crawly.Middlewares.UniqueRequest,
+    {Crawly.Middlewares.UserAgent, user_agents: ["Crawly Bot"]}
+  ],
   pipelines: [
     Crawly.Pipelines.JSONEncoder,
     {Crawly.Pipelines.WriteToFile, folder: "/tmp", extension: "jl"}
